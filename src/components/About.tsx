@@ -33,7 +33,7 @@ const About = () => {
             <span className="inline-block text-primary font-medium tracking-widest uppercase text-sm mb-4">
               Обо мне
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">Привет, я Кристина —
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">Привет, я Кристина - 
 книжный энтузиаст<br />
               <span className="text-primary">книжный энтузиаст</span>
             </h2>
