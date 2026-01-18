@@ -8,44 +8,44 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Warm cream/beige palette for book blogger */
-    --background: 40 33% 98%;
-    --foreground: 25 30% 15%;
+    /* Brutal dark aesthetic for Christina Evil */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 8%;
 
-    --card: 40 40% 97%;
-    --card-foreground: 25 30% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
 
-    --popover: 40 40% 97%;
-    --popover-foreground: 25 30% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
 
-    /* Terracotta/rust accent */
-    --primary: 15 65% 45%;
-    --primary-foreground: 40 40% 98%;
+    /* Deep crimson accent */
+    --primary: 0 70% 35%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 35 30% 92%;
-    --secondary-foreground: 25 30% 20%;
+    --secondary: 0 0% 92%;
+    --secondary-foreground: 0 0% 15%;
 
-    --muted: 35 20% 94%;
-    --muted-foreground: 25 15% 45%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 25 50% 88%;
-    --accent-foreground: 25 30% 15%;
+    --accent: 0 5% 88%;
+    --accent-foreground: 0 0% 8%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 35 25% 88%;
-    --input: 35 25% 90%;
-    --ring: 15 65% 45%;
+    --border: 0 0% 88%;
+    --input: 0 0% 90%;
+    --ring: 0 70% 35%;
 
-    --radius: 0.75rem;
+    --radius: 0.25rem;
 
-    /* Custom tokens */
-    --cream: 40 40% 95%;
-    --warm-brown: 25 35% 30%;
-    --terracotta: 15 65% 45%;
-    --sage: 90 15% 85%;
-    --gold: 45 70% 55%;
+    /* Custom brutal tokens */
+    --crimson: 0 70% 35%;
+    --blood: 0 80% 25%;
+    --charcoal: 0 0% 12%;
+    --smoke: 0 0% 45%;
+    --bone: 40 20% 95%;
   }
 }
 
@@ -54,20 +54,24 @@ All colors MUST be HSL.
     text-wrap: balance;
   }
   
-  .font-serif-display {
+  .font-display {
     font-family: 'Playfair Display', Georgia, serif;
   }
   
-  .gradient-warm {
-    background: linear-gradient(135deg, hsl(40 40% 97%) 0%, hsl(35 30% 92%) 100%);
+  .gradient-brutal {
+    background: linear-gradient(180deg, hsl(0 0% 8%) 0%, hsl(0 0% 15%) 100%);
   }
   
-  .shadow-soft {
-    box-shadow: 0 4px 20px -4px hsl(25 30% 15% / 0.08);
+  .shadow-brutal {
+    box-shadow: 4px 4px 0 0 hsl(0 0% 8%);
   }
   
-  .shadow-warm {
-    box-shadow: 0 8px 30px -8px hsl(15 65% 45% / 0.15);
+  .shadow-crimson {
+    box-shadow: 4px 4px 0 0 hsl(0 70% 35%);
+  }
+  
+  .border-brutal {
+    border: 2px solid hsl(0 0% 8%);
   }
   
   .animate-float {
@@ -79,12 +83,13 @@ All colors MUST be HSL.
     50% { transform: translateY(-10px); }
   }
   
-  .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .hover-brutal {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   
-  .hover-lift:hover {
-    transform: translateY(-4px);
+  .hover-brutal:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 hsl(0 0% 8%);
   }
 }
 

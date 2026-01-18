@@ -1,40 +1,42 @@
+import { Play, ArrowDown } from "lucide-react";
 import heroImage from "@/assets/hero-books.jpg";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background Image */}
+      {/* Background Image with dark overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Уютная атмосфера с книгами"
-          className="w-full h-full object-cover"
+          alt="Книги и атмосфера"
+          className="w-full h-full object-cover grayscale"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/50 to-background" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-3xl mx-auto">
           <span 
-            className="inline-block text-primary font-medium tracking-widest uppercase text-sm mb-6 opacity-0 animate-fade-up"
+            className="inline-block text-primary font-bold tracking-[0.3em] uppercase text-sm mb-6 opacity-0 animate-fade-up"
             style={{ animationDelay: "0.1s" }}
           >
             Книжный блог
           </span>
           
           <h1 
-            className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6 opacity-0 animate-fade-up"
+            className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-background leading-none mb-6 opacity-0 animate-fade-up tracking-tight"
             style={{ animationDelay: "0.2s" }}
           >
-            Между строк
+            Christina
+            <span className="block text-primary">Evil</span>
           </h1>
           
           <p 
-            className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10 opacity-0 animate-fade-up"
+            className="text-lg md:text-xl text-background/80 max-w-xl mx-auto mb-10 opacity-0 animate-fade-up font-medium"
             style={{ animationDelay: "0.3s" }}
           >
-            Путешествия по страницам книг, честные рецензии и литературные открытия для настоящих книголюбов
+            Честные обзоры на фэнтези, романы и современную литературу. Без розовых очков.
           </p>
           
           <div 
@@ -43,15 +45,16 @@ const Hero = () => {
           >
             <a
               href="#reviews"
-              className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-all hover-lift shadow-warm"
+              className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-bold uppercase tracking-wide border-2 border-primary hover:bg-transparent hover:text-primary transition-all"
             >
-              Читать рецензии
+              Читать обзоры
             </a>
             <a
-              href="#about"
-              className="inline-flex items-center justify-center px-8 py-4 bg-secondary text-secondary-foreground font-medium rounded-lg hover:bg-secondary/80 transition-all"
+              href="#videos"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent text-background font-bold uppercase tracking-wide border-2 border-background hover:bg-background hover:text-foreground transition-all"
             >
-              Узнать больше
+              <Play className="w-5 h-5" />
+              Смотреть видео
             </a>
           </div>
         </div>
@@ -59,9 +62,9 @@ const Hero = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-up" style={{ animationDelay: "0.6s" }}>
-        <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center">
-          <div className="w-1.5 h-3 bg-primary rounded-full mt-2 animate-bounce" />
-        </div>
+        <a href="#about" className="text-background/50 hover:text-primary transition-colors">
+          <ArrowDown className="w-8 h-8 animate-bounce" />
+        </a>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import { BookOpen, Menu, X } from "lucide-react";
+import { Skull, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const Header = () => {
@@ -6,18 +6,19 @@ const Header = () => {
 
   const navLinks = [
     { href: "#about", label: "Обо мне" },
-    { href: "#reviews", label: "Рецензии" },
+    { href: "#reviews", label: "Обзоры" },
+    { href: "#videos", label: "Видео" },
     { href: "#subscribe", label: "Подписка" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b-2 border-foreground">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
           <a href="#" className="flex items-center gap-2 group">
-            <BookOpen className="w-6 h-6 text-primary transition-transform group-hover:rotate-12" />
-            <span className="font-serif text-xl font-semibold text-foreground">
-              Между строк
+            <Skull className="w-7 h-7 text-primary transition-transform group-hover:rotate-12" />
+            <span className="font-serif text-xl font-bold tracking-tight text-foreground uppercase">
+              Christina Evil
             </span>
           </a>
 
@@ -27,7 +28,7 @@ const Header = () => {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="text-muted-foreground hover:text-primary transition-colors font-medium text-sm tracking-wide"
+                  className="text-muted-foreground hover:text-primary transition-colors font-semibold text-sm tracking-wide uppercase"
                 >
                   {link.label}
                 </a>
@@ -53,7 +54,7 @@ const Header = () => {
                 <a
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block text-muted-foreground hover:text-primary transition-colors font-medium"
+                  className="block text-muted-foreground hover:text-primary transition-colors font-semibold uppercase"
                 >
                   {link.label}
                 </a>

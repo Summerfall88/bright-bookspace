@@ -2,72 +2,72 @@ import BookCard from "./BookCard";
 
 const reviews = [
   {
-    title: "Маленькая жизнь",
-    author: "Ханья Янагихара",
+    title: "Дом, в котором...",
+    author: "Мариам Петросян",
     rating: 5,
     genre: "Современная проза",
-    excerpt: "Книга, которая разобьёт вам сердце и соберёт его заново. История о дружбе, травме и силе человеческого духа.",
-    coverColor: "bg-gradient-to-br from-primary to-primary/70",
+    verdict: "fire" as const,
+    excerpt: "Абсолютный шедевр. Книга, которая засядет в голове навсегда. Атмосфера, персонажи, язык — всё на высшем уровне.",
   },
   {
-    title: "Сто лет одиночества",
-    author: "Габриэль Гарсиа Маркес",
+    title: "Сара Дж. Маас — Дом Земли и Крови",
+    author: "Сара Дж. Маас",
+    rating: 2,
+    genre: "Фэнтези",
+    verdict: "trash" as const,
+    excerpt: "700 страниц скуки. Романтика уровня фанфика, сюжет предсказуем. Хайп не оправдан.",
+  },
+  {
+    title: "Имя ветра",
+    author: "Патрик Ротфусс",
     rating: 5,
-    genre: "Магический реализм",
-    excerpt: "Эпическая сага о семье Буэндиа — это не просто книга, это целый мир, в который погружаешься с головой.",
-    coverColor: "bg-gradient-to-br from-warm-brown to-warm-brown/70",
+    genre: "Фэнтези",
+    verdict: "fire" as const,
+    excerpt: "Лучшее фэнтези десятилетия. Квоут — гений, проза — поэзия. Жаль, что третьей книги не будет никогда.",
   },
   {
-    title: "Норвежский лес",
-    author: "Харуки Мураками",
+    title: "Убийство в Восточном экспрессе",
+    author: "Агата Кристи",
     rating: 4,
-    genre: "Современная проза",
-    excerpt: "Нежная и меланхоличная история о любви, потере и взрослении. Мураками в своём лучшем проявлении.",
-    coverColor: "bg-gradient-to-br from-sage to-sage/50",
+    genre: "Детектив",
+    verdict: "okay" as const,
+    excerpt: "Классика, которая до сих пор держит планку. Финал спорный, но это Кристи — её можно.",
   },
   {
-    title: "Думай медленно... решай быстро",
-    author: "Даниэль Канеман",
-    rating: 4,
-    genre: "Нон-фикшн",
-    excerpt: "Увлекательное путешествие в мир когнитивных искажений. Книга изменит ваш взгляд на принятие решений.",
-    coverColor: "bg-gradient-to-br from-gold/80 to-gold/50",
+    title: "Четвёртое крыло",
+    author: "Ребекка Яррос",
+    rating: 3,
+    genre: "Романтическое фэнтези",
+    verdict: "okay" as const,
+    excerpt: "Guilty pleasure. Драконы горячие, романтика предсказуемая, но затягивает. На один раз сойдёт.",
   },
   {
-    title: "1984",
-    author: "Джордж Оруэлл",
-    rating: 5,
-    genre: "Классика",
-    excerpt: "Пугающе актуальная антиутопия о тоталитаризме и свободе мысли. Классика, которую нужно перечитывать.",
-    coverColor: "bg-gradient-to-br from-foreground to-foreground/70",
-  },
-  {
-    title: "Атлант расправил плечи",
-    author: "Айн Рэнд",
-    rating: 4,
-    genre: "Философская проза",
-    excerpt: "Монументальный роман о творцах и тех, кто живёт за их счёт. Книга вызывает споры, но заставляет думать.",
-    coverColor: "bg-gradient-to-br from-terracotta to-terracotta/70",
+    title: "После",
+    author: "Анна Тодд",
+    rating: 1,
+    genre: "Современный роман",
+    verdict: "trash" as const,
+    excerpt: "Токсичные отношения, возведённые в романтику. Не рекомендую никому с самоуважением.",
   },
 ];
 
 const Reviews = () => {
   return (
-    <section id="reviews" className="py-24 bg-background">
+    <section id="reviews" className="py-24 bg-secondary/50">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block text-primary font-medium tracking-widest uppercase text-sm mb-4">
-            Рецензии
+          <span className="inline-block text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4">
+            Обзоры
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Последние прочитанные
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-6">
+            Последние жертвы
           </h2>
           <p className="text-muted-foreground text-lg">
-            Честные отзывы о книгах, которые стоит прочитать — от классики до современных бестселлеров
+            Честные оценки без цензуры. Огонь, мусор или так себе — узнаете здесь.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.map((review, index) => (
             <div
               key={index}
