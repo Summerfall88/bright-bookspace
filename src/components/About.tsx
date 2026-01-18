@@ -13,7 +13,7 @@ const About = () => {
     value: "50+",
     label: "Рецензий"
   }];
-  return <section id="about" className="py-24 bg-secondary/30">
+  return <section id="about" className="py-24 bg-white/[0.03]">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image */}
