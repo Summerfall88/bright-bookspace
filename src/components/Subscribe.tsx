@@ -17,9 +17,7 @@ const Subscribe = () => {
             <Mail className="w-8 h-8 text-primary" />
           </div>
           
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Не пропустите новые рецензии
-          </h2>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">Не пропустите новые рецензии и обзоры</h2>
           <p className="text-muted-foreground text-lg mb-8">
             Подпишитесь на рассылку и получайте свежие обзоры книг прямо на почту. 
             Никакого спама — только литература.
