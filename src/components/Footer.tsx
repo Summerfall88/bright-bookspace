@@ -30,9 +30,7 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <p className="text-sm text-background/60">
-            © 2024 Между строк. Все права защищены.
-          </p>
+          <p className="text-sm text-background/60">© 2026 Evilbook. Все права защищены.</p>
         </div>
       </div>
     </footer>;
