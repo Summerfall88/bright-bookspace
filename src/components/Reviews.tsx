@@ -2,7 +2,7 @@ import BookCard from "./BookCard";
 
 const reviews = [
   {
-    title: "Маленькая жизнь",
+    title: "Маленькая Жзн",
     author: "Ханья Янагихара",
     rating: 5,
     genre: "Современная проза",
