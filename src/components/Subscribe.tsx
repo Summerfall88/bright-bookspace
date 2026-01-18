@@ -18,10 +18,7 @@ const Subscribe = () => {
           </div>
           
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">Не пропустите новые рецензии и обзоры</h2>
-          <p className="text-muted-foreground text-lg mb-8">
-            Подпишитесь на рассылку и получайте свежие обзоры книг прямо на почту. 
-            Никакого спама — только литература.
-          </p>
+          <p className="text-muted-foreground text-lg mb-8">Подпишитесь на рассылку и получайте свежие обзоры книг прямо на почту. Никакого спама - только литература.</p>
 
           {isSubscribed ? <div className="bg-primary/10 text-primary p-6 rounded-2xl inline-flex items-center gap-3">
               <Sparkles className="w-6 h-6" />
