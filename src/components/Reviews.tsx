@@ -3,8 +3,8 @@ import BookCard from "./BookCard";
 const reviews = [
   {
     title: "Маленькая Жзн",
-    author: "Ханья Янагихара",
-    rating: 5,
+    author: "Хан Яна",
+    rating: 3,
     genre: "Современная проза",
     excerpt: "Книга, которая разобьёт вам сердце и соберёт его заново. История о дружбе, травме и силе человеческого духа.",
     coverColor: "bg-gradient-to-br from-primary to-primary/70",
