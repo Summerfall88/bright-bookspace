@@ -52,6 +52,7 @@ export default {
         charcoal: "hsl(var(--charcoal))",
         smoke: "hsl(var(--smoke))",
         bone: "hsl(var(--bone))",
+        ember: "hsl(var(--ember))",
       },
       fontFamily: {
         serif: ['Playfair Display', 'Georgia', 'serif'],
