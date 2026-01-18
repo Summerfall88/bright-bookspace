@@ -1,14 +1,19 @@
 import { BookMarked, Coffee, Heart } from "lucide-react";
-
 const About = () => {
-  const stats = [
-    { icon: BookMarked, value: "150+", label: "Прочитанных книг" },
-    { icon: Coffee, value: "300+", label: "Чашек кофе" },
-    { icon: Heart, value: "50+", label: "Рецензий" },
-  ];
-
-  return (
-    <section id="about" className="py-24 bg-secondary/30">
+  const stats = [{
+    icon: BookMarked,
+    value: "150+",
+    label: "Прочитанных книг"
+  }, {
+    icon: Coffee,
+    value: "300+",
+    label: "Чашек кофе"
+  }, {
+    icon: Heart,
+    value: "50+",
+    label: "Рецензий"
+  }];
+  return <section id="about" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image */}
@@ -28,27 +33,16 @@ const About = () => {
             <span className="inline-block text-primary font-medium tracking-widest uppercase text-sm mb-4">
               Обо мне
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Привет, я Анна — <br />
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">Привет, я Кристина —
+книжный энтузиаст<br />
               <span className="text-primary">книжный энтузиаст</span>
             </h2>
-            <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-              Уже более 5 лет я делюсь своей любовью к литературе. Здесь вы найдёте 
-              честные рецензии на современную прозу, классику и нон-фикшн. Каждая книга — 
-              это новое приключение, и я приглашаю вас в это путешествие вместе со мной.
-            </p>
-            <p className="text-muted-foreground mb-8 leading-relaxed">
-              Моя миссия — помочь вам найти книгу, которая изменит ваш взгляд на мир 
-              или просто подарит уютный вечер с чашкой чая.
-            </p>
+            <p className="text-muted-foreground text-lg mb-6 leading-relaxed">Уже более 8 лет я делюсь своей любовью к литературе. Здесь вы найдёте честные рецензии на современное фэнтази, любовные романы и много другое. Каждая книга — это новое приключение, и я приглашаю вас в это путешествие вместе со мной.</p>
+            <p className="text-muted-foreground mb-8 leading-relaxed">Моя миссия — помочь вам найти книгу, которая, возможно, изменит ваш взгляд на мир или просто подарит уютный вечер с чашечкой чая.</p>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4">
-              {stats.map((stat, index) => (
-                <div 
-                  key={index}
-                  className="text-center p-4 rounded-xl bg-background shadow-soft hover-lift"
-                >
+              {stats.map((stat, index) => <div key={index} className="text-center p-4 rounded-xl bg-background shadow-soft hover-lift">
                   <stat.icon className="w-6 h-6 text-primary mx-auto mb-2" />
                   <div className="font-serif text-2xl font-bold text-foreground">
                     {stat.value}
@@ -56,14 +50,11 @@ const About = () => {
                   <div className="text-xs text-muted-foreground mt-1">
                     {stat.label}
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
