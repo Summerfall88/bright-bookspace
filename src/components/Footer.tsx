@@ -2,15 +2,15 @@ import { BookOpen, Instagram, Send, Youtube } from "lucide-react";
 const Footer = () => {
   const socialLinks = [{
     icon: Instagram,
-    href: "#",
+    href: "https://www.instagram.com/christinaevil/",
     label: "Instagram"
   }, {
     icon: Send,
-    href: "#",
+    href: "https://t.me/christinaevilbook",
     label: "Telegram"
   }, {
     icon: Youtube,
-    href: "#",
+    href: "https://www.youtube.com/@evilbook",
     label: "YouTube"
   }];
   return <footer className="py-12 bg-foreground text-background">
