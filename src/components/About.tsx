@@ -35,7 +35,7 @@ const About = () => {
             </span>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">Привет, я Кристина - 
 книжный энтузиаст<br />
-              <span className="text-primary">книжный энтузиаст</span>
+              <span className="text-primary"></span>
             </h2>
             <p className="text-muted-foreground text-lg mb-6 leading-relaxed">Уже более 8 лет я делюсь своей любовью к литературе. Здесь вы найдёте честные рецензии на современное фэнтази, любовные романы и много другое. Каждая книга - это новое приключение, и я приглашаю вас в это путешествие вместе со мной.</p>
             <p className="text-muted-foreground mb-8 leading-relaxed">Моя миссия - помочь вам найти книгу, которая, возможно, изменит ваш взгляд на мир или просто подарит уютный вечер с чашечкой чая.</p>
