@@ -1,5 +1,7 @@
 import { BookOpen, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navLinks = [{
@@ -15,12 +17,12 @@ const Header = () => {
   return <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
-          <a href="#" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-2 group">
             <BookOpen className="w-6 h-6 text-primary transition-transform group-hover:rotate-12" />
             <span className="font-serif text-xl font-semibold text-foreground">
               EvilBook
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-8">
