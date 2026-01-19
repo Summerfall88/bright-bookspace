@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navLinks = [{
-    href: "#about",
+  const navLinks: { href?: string; to?: string; label: string }[] = [{
+    href: "/#about",
     label: "Обо мне"
   }, {
-    href: "#reviews",
+    to: "/reviews",
     label: "Рецензии"
   }, {
-    href: "#subscribe",
+    href: "/#subscribe",
     label: "Подписка"
   }];
   return <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -26,10 +26,16 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-8">
-            {navLinks.map(link => <li key={link.href}>
-                <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors font-medium text-sm tracking-wide">
-                  {link.label}
-                </a>
+            {navLinks.map(link => <li key={link.to ?? link.href}>
+                {link.to ? (
+                  <Link to={link.to} className="text-muted-foreground hover:text-primary transition-colors font-medium text-sm tracking-wide">
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a href={link.href} className="text-muted-foreground hover:text-primary transition-colors font-medium text-sm tracking-wide">
+                    {link.label}
+                  </a>
+                )}
               </li>)}
           </ul>
 
@@ -41,10 +47,16 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && <ul className="md:hidden mt-4 pb-4 flex flex-col gap-4 animate-fade-up">
-            {navLinks.map(link => <li key={link.href}>
-                <a href={link.href} onClick={() => setIsMenuOpen(false)} className="block text-muted-foreground hover:text-primary transition-colors font-medium">
-                  {link.label}
-                </a>
+            {navLinks.map(link => <li key={link.to ?? link.href}>
+                {link.to ? (
+                  <Link to={link.to} onClick={() => setIsMenuOpen(false)} className="block text-muted-foreground hover:text-primary transition-colors font-medium">
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a href={link.href} onClick={() => setIsMenuOpen(false)} className="block text-muted-foreground hover:text-primary transition-colors font-medium">
+                    {link.label}
+                  </a>
+                )}
               </li>)}
           </ul>}
       </div>

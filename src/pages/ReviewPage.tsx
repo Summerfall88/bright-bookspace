@@ -22,7 +22,7 @@ const ReviewPage = () => {
               Рецензия не найдена
             </h1>
             <Link 
-              to="/#reviews" 
+              to="/reviews" 
               className="text-primary hover:underline inline-flex items-center gap-2"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -43,7 +43,7 @@ const ReviewPage = () => {
         <section className={`${review.coverColor} py-16 md:py-24`}>
           <div className="container mx-auto px-4">
             <Link 
-              to="/#reviews" 
+              to="/reviews" 
               className="inline-flex items-center gap-2 text-background/80 hover:text-background mb-8 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -137,7 +137,7 @@ const ReviewPage = () => {
               {/* Back Link */}
               <div className="mt-16 pt-8 border-t border-border">
                 <Link 
-                  to="/#reviews" 
+                  to="/reviews" 
                   className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
                 >
                   <ArrowLeft className="w-4 h-4" />
