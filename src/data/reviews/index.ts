@@ -11,6 +11,7 @@ import { stoLetOdinochestva } from "./sto-let-odinochestva";
 import { norvezhskiyLes } from "./norvezhskiy-les";
 import { dumayMedlenno } from "./dumay-medlenno";
 import { orwell1984 } from "./1984";
+import { orwell19 } from "./19";
 import { atlantRaspravilPlechi } from "./atlant-raspravil-plechi";
 import { Review } from "./types";
 
@@ -21,6 +22,7 @@ export const reviews: Review[] = [
   norvezhskiyLes,
   dumayMedlenno,
   orwell1984,
+  orwell19,
   atlantRaspravilPlechi,
 ];
 
