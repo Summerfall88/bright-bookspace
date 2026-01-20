@@ -1,6 +1,6 @@
 import { Review } from "./types";
 
-export const well1984: Review = {
+export const dve: Review = {
   id: "2007",
   title: "2007",
   author: "Джордж Руэлл",
