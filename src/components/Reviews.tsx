@@ -1,5 +1,5 @@
 import BookCard from "./BookCard";
-import { reviews } from "@/data/reviews";
+import { reviews } from "@/data/reviews/index";
 
 const Reviews = () => {
   return (
