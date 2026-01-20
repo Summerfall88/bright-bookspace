@@ -26,3 +26,5 @@ export const dve: Review = {
 Абсолютный must-read для всех возрастов.`,
   publishedDate: "1 апреля 2025"
 };
+
+export default review
