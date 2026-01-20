@@ -1,14 +1,14 @@
 import { Review } from "./types";
 
 export const dumay: Review = {
-  id: "dumay",
-  title: "dumay",
-  author: "dumay",
+  id: "dumayid",
+  title: "dumaytitle",
+  author: "dumayauthor",
   rating: 3,
-  genre: "dumay",
-  excerpt: "dumay",
-  coverColor: "bg-gradient-to-br from-gold/80 to-gold/50",
-  fullReview: `Даниэль Канеман, нобелевский лауреат по экономике, написал книгу, которая должна быть обязательной к прочтению для каждого думающего человека. Это не лёгкое чтиво, но каждая страница стоит усилий.
+  genre: "dumaygenre",
+  excerpt: "dumayexcerpt",
+  coverColor: "bg-gradient-to-br from-gold/80 to-blue/50",
+  fullReview: `Fниэль Канеман, нобелевский лауреат по экономике, написал книгу, которая должна быть обязательной к прочтению для каждого думающего человека. Это не лёгкое чтиво, но каждая страница стоит усилий.
 
 Основная идея книги — наш мозг использует две системы мышления: быструю и интуитивную (Система 1) и медленную и рациональную (Система 2). Проблема в том, что мы часто полагаемся на первую там, где нужна вторая.
 
