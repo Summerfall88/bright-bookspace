@@ -18,7 +18,7 @@ import { Review } from "./types";
 // Массив всех рецензий — добавляйте новые сюда
 export const reviews: Review[] = [
   malenkayaZhizn,
-  dumayMedlenno13
+  dumayMedlenno13,
   stoLetOdinochestva,
   norvezhskiyLes,
   dumayMedlenno,
