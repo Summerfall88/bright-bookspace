@@ -1,12 +1,12 @@
 import { Review } from "./types";
 
-export const dumayMedlenno13: Review = {
-  id: "dumay-medlenno13",
-  title: "Думай медленно13... решай быстро13",
-  author: "Даниэль Канеман",
+export const dumay: Review = {
+  id: "dumay",
+  title: "dumay",
+  author: "dumay",
   rating: 3,
-  genre: "Нон-фик13шн",
-  excerpt: "Увлекательное путешествие в мир когнитивных искажений. Книга изменит ваш взгляд на принятие решений.",
+  genre: "dumay",
+  excerpt: "dumay",
   coverColor: "bg-gradient-to-br from-gold/80 to-gold/50",
   fullReview: `Даниэль Канеман, нобелевский лауреат по экономике, написал книгу, которая должна быть обязательной к прочтению для каждого думающего человека. Это не лёгкое чтиво, но каждая страница стоит усилий.
 
