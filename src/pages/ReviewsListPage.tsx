@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BookCard from "@/components/BookCard";
 import { Input } from "@/components/ui/input";
-import { reviews } from "@/data/reviews";
+import { reviews } from "@/data/reviews/index";
 
 const ReviewsListPage = () => {
   const [search, setSearch] = useState("");
