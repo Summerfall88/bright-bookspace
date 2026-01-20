@@ -10,6 +10,7 @@ import { malenkayaZhizn } from "./malenkaya-zhizn";
 import { stoLetOdinochestva } from "./sto-let-odinochestva";
 import { norvezhskiyLes } from "./norvezhskiy-les";
 import { dumayMedlenno } from "./dumay-medlenno";
+import { orwell1984 } from "./1984";
 import { atlantRaspravilPlechi } from "./atlant-raspravil-plechi";
 import { Review } from "./types";
 
@@ -19,6 +20,7 @@ export const reviews: Review[] = [
   stoLetOdinochestva,
   norvezhskiyLes,
   dumayMedlenno,
+  orwell1984,
   atlantRaspravilPlechi,
 ];
 
