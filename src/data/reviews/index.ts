@@ -7,7 +7,7 @@
 export type { Review } from "./types";
 
 import { malenkayaZhizn } from "./malenkaya-zhizn";
-import { well1984 } from "./2007";
+import { dve } from "./2007";
 import { stoLetOdinochestva } from "./sto-let-odinochestva";
 import { norvezhskiyLes } from "./norvezhskiy-les";
 import { dumayMedlenno } from "./dumay-medlenno";
@@ -18,7 +18,7 @@ import { Review } from "./types";
 // Массив всех рецензий — добавляйте новые сюда
 export const reviews: Review[] = [
   malenkayaZhizn,
-  well1984
+  dve
   stoLetOdinochestva,
   norvezhskiyLes,
   dumayMedlenno,
