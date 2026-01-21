@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import BookCard from "./BookCard";
 import { reviews } from "@/data/reviews/index";
 
@@ -6,9 +7,12 @@ const Reviews = () => {
     <section id="reviews" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block text-primary font-medium tracking-widest uppercase text-sm mb-4">
+          <Link 
+            to="/reviews" 
+            className="inline-block text-primary font-medium tracking-widest uppercase text-sm mb-4 hover:text-primary/80 transition-colors"
+          >
             Рецензии
-          </span>
+          </Link>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Последние прочитанные
           </h2>
