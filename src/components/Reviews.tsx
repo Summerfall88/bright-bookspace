@@ -18,7 +18,7 @@ const Reviews = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reviews.map((review, index) => (
+          {reviews.slice(0, 6).map((review, index) => (
             <div 
               key={review.id} 
               className="opacity-0 animate-fade-up" 
