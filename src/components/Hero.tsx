@@ -26,14 +26,11 @@ const Hero = () => {
             Путешествия по страницам книг, честные рецензии и литературные открытия для настоящих книголюбов
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-up" style={{
+          <div className="flex justify-center opacity-0 animate-fade-up" style={{
           animationDelay: "0.4s"
         }}>
             <a href="#reviews" className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-all hover-lift shadow-warm">
               Читать рецензии
-            </a>
-            <a href="#about" className="inline-flex items-center justify-center px-8 py-4 bg-secondary text-secondary-foreground font-medium rounded-lg hover:bg-secondary/80 transition-all">
-              Узнать больше
             </a>
           </div>
         </div>
