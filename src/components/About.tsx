@@ -1,4 +1,6 @@
 import { BookMarked, Coffee, Heart } from "lucide-react";
+import aboutPhoto from "@/assets/about-photo.jpg";
+
 const About = () => {
   const stats = [{
     icon: BookMarked,
@@ -18,10 +20,12 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image */}
           <div className="relative order-2 lg:order-1">
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-soft bg-accent">
-              <div className="w-full h-full bg-gradient-to-br from-accent to-secondary flex items-center justify-center">
-                <BookMarked className="w-24 h-24 text-primary/30" />
-              </div>
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-soft">
+              <img 
+                src={aboutPhoto} 
+                alt="Кристина - автор блога" 
+                className="w-full h-full object-cover"
+              />
             </div>
             {/* Decorative elements */}
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
