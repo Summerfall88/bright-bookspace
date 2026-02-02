@@ -1,9 +1,13 @@
 import { BookOpen, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { settings } = useSiteSettings("branding");
+  const branding = settings.branding || {};
+
   const navLinks: { to: string; label: string }[] = [{
     to: "/#about",
     label: "Обо мне"
@@ -24,7 +28,7 @@ const Header = () => {
         >
           <BookOpen className="w-6 h-6 text-primary transition-transform group-hover:rotate-12" />
           <span className="font-serif text-xl font-semibold text-foreground">
-            EvilBook
+            {branding.logo_text || "EvilBook"}
           </span>
         </Link>
 
