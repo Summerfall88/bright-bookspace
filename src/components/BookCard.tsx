@@ -27,7 +27,7 @@ const BookCard = ({ id, title, author, rating, genre, excerpt, coverColor, cover
 
             {/* Book Spine (Left Edge) */}
             <div
-              className={`absolute left-0 top-0 bottom-0 w-4 ${coverColor} rounded-l-sm`}
+              className={`absolute left-0 top-0 bottom-0 w-4 ${coverColor} rounded-l-md`}
               style={{
                 transform: "translateX(-12px) rotateY(-90deg)",
                 transformOrigin: "right center",
@@ -37,7 +37,7 @@ const BookCard = ({ id, title, author, rating, genre, excerpt, coverColor, cover
 
             {/* Book Pages (Right Edge) */}
             <div
-              className="absolute right-0 top-2 bottom-2 w-3 bg-gradient-to-r from-cream to-background rounded-r-sm"
+              className="absolute right-0 top-2 bottom-2 w-3 bg-gradient-to-r from-cream to-background rounded-r-md"
               style={{
                 boxShadow: "inset -1px 0 2px rgba(0,0,0,0.1)",
                 background: "repeating-linear-gradient(to bottom, hsl(var(--cream)) 0px, hsl(var(--cream)) 2px, hsl(var(--background)) 2px, hsl(var(--background)) 4px)"
@@ -46,7 +46,7 @@ const BookCard = ({ id, title, author, rating, genre, excerpt, coverColor, cover
 
             {/* Main Book Cover */}
             <div
-              className={`aspect-[3/4] relative overflow-hidden ${coverColor} rounded-r-sm rounded-l-none shadow-2xl`}
+              className={`aspect-[3/4] relative overflow-hidden ${coverColor} rounded-md shadow-2xl`}
               style={{
                 boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 12px 24px -8px rgba(0, 0, 0, 0.2)"
               }}

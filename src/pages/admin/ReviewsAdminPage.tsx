@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { AdminHeader } from '@/components/admin/AdminHeader';
-import { useReviews, useDeleteReview } from '@/hooks/useReviews';
+import { useReviews, useDeleteReview, useUpdateReviewsOrder } from '@/hooks/useReviews';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -20,14 +20,23 @@ import {
     Eye,
     EyeOff,
     Loader2,
-    BookOpen
+    BookOpen,
+    ArrowUp,
+    ArrowDown
 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { useState, useEffect } from 'react';
 
 export function ReviewsAdminPage() {
-    const { reviews, loading } = useReviews({ includeUnpublished: true });
+    const { reviews: fetchedReviews, loading } = useReviews({ includeUnpublished: true });
     const deleteReview = useDeleteReview();
+    const updateOrder = useUpdateReviewsOrder();
     const { toast } = useToast();
+    const [localReviews, setLocalReviews] = useState(fetchedReviews);
+
+    useEffect(() => {
+        setLocalReviews(fetchedReviews);
+    }, [fetchedReviews]);
 
     const handleDelete = async (id: string, title: string) => {
         if (!confirm(`Вы уверены, что хотите удалить рецензию на книгу "${title}"?`)) {
@@ -49,7 +58,40 @@ export function ReviewsAdminPage() {
         }
     };
 
-    if (loading) {
+    const handleMove = async (index: number, direction: 'up' | 'down') => {
+        const newReviews = [...localReviews];
+        const newIndex = direction === 'up' ? index - 1 : index + 1;
+
+        if (newIndex < 0 || newIndex >= newReviews.length) return;
+
+        // Меняем местами
+        const temp = newReviews[index];
+        newReviews[index] = newReviews[newIndex];
+        newReviews[newIndex] = temp;
+
+        // Обновляем локальное состояние для мгновенного отклика
+        setLocalReviews(newReviews);
+
+        // Готовим данные для обновления в БД (новые позиции)
+        const orderUpdates = newReviews.map((review, i) => ({
+            id: review.id,
+            position: i
+        }));
+
+        try {
+            await updateOrder.mutateAsync(orderUpdates);
+        } catch (error) {
+            toast({
+                title: 'Ошибка',
+                description: 'Не удалось сохранить порядок',
+                variant: 'destructive',
+            });
+            // Возвращаем как было при ошибке
+            setLocalReviews(fetchedReviews);
+        }
+    };
+
+    if (loading && localReviews.length === 0) {
         return (
             <div className="flex items-center justify-center min-h-[400px]">
                 <Loader2 className="w-8 h-8 animate-spin text-primary" />
@@ -75,7 +117,7 @@ export function ReviewsAdminPage() {
             <div className="p-6">
                 <Card>
                     <CardContent className="p-0">
-                        {reviews.length === 0 ? (
+                        {localReviews.length === 0 ? (
                             <div className="flex flex-col items-center justify-center py-12 text-muted-foreground">
                                 <BookOpen className="w-12 h-12 mb-4 opacity-20" />
                                 <p>Рецензий пока нет. Создайте первую!</p>
@@ -96,7 +138,7 @@ export function ReviewsAdminPage() {
                                     </TableRow>
                                 </TableHeader>
                                 <TableBody>
-                                    {reviews.map((review) => (
+                                    {localReviews.map((review, index) => (
                                         <TableRow key={review.id}>
                                             <TableCell>
                                                 {review.cover_image_url ? (
@@ -134,7 +176,27 @@ export function ReviewsAdminPage() {
                                                 )}
                                             </TableCell>
                                             <TableCell className="text-right">
-                                                <div className="flex justify-end gap-2">
+                                                <div className="flex justify-end gap-1">
+                                                    <div className="flex flex-col mr-2">
+                                                        <Button
+                                                            size="icon"
+                                                            variant="ghost"
+                                                            className="h-6 w-6"
+                                                            disabled={index === 0 || updateOrder.isPending}
+                                                            onClick={() => handleMove(index, 'up')}
+                                                        >
+                                                            <ArrowUp className="w-3 h-3" />
+                                                        </Button>
+                                                        <Button
+                                                            size="icon"
+                                                            variant="ghost"
+                                                            className="h-6 w-6"
+                                                            disabled={index === localReviews.length - 1 || updateOrder.isPending}
+                                                            onClick={() => handleMove(index, 'down')}
+                                                        >
+                                                            <ArrowDown className="w-3 h-3" />
+                                                        </Button>
+                                                    </div>
                                                     <Button size="icon" variant="ghost" asChild>
                                                         <Link to={`/admin/reviews/${review.id}`}>
                                                             <Edit className="w-4 h-4 text-muted-foreground" />

@@ -35,7 +35,7 @@ const Hero = () => {
           {content?.badge || "Книжный блог"}
         </span>
 
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6 opacity-0 animate-fade-up" style={{
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6 opacity-0 animate-fade-up break-words" style={{
           animationDelay: "0.2s"
         }}>
           {content?.heading || "Christina Evilbook"}

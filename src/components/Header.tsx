@@ -26,7 +26,15 @@ const Header = () => {
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="flex items-center gap-2 group"
         >
-          <BookOpen className="w-6 h-6 text-primary transition-transform group-hover:rotate-12" />
+          {branding.logo_icon_url ? (
+            <img
+              src={branding.logo_icon_url}
+              alt="Logo"
+              className="w-6 h-6 object-contain transition-transform group-hover:rotate-12"
+            />
+          ) : (
+            <BookOpen className="w-6 h-6 text-primary transition-transform group-hover:rotate-12" />
+          )}
           <span className="font-serif text-xl font-semibold text-foreground">
             {branding.logo_text || "EvilBook"}
           </span>

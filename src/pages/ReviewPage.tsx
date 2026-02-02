@@ -92,7 +92,7 @@ const ReviewPage = () => {
               <span className="inline-block text-background/70 text-sm font-medium tracking-widest uppercase mb-4">
                 {review.genre}
               </span>
-              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-sm">
+              <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-sm break-words">
                 {review.title}
               </h1>
               <p className="text-xl text-background/80 mb-6">{review.author}</p>
@@ -112,10 +112,6 @@ const ReviewPage = () => {
                   <Calendar className="w-4 h-4" />
                   {review.published_date}
                 </div>
-                <div className="flex items-center gap-2 whitespace-nowrap">
-                  <BookOpen className="w-4 h-4" />
-                  ~5 мин чтения
-                </div>
               </div>
             </div>
           </div>
@@ -126,12 +122,12 @@ const ReviewPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               {/* Excerpt */}
-              <blockquote className="text-xl md:text-2xl text-muted-foreground italic border-l-4 border-primary pl-6 mb-12">
+              <blockquote className="text-xl md:text-2xl text-muted-foreground italic border-l-4 border-primary pl-6 mb-12 break-words">
                 {review.excerpt}
               </blockquote>
 
               {/* Full Review Content */}
-              <article className="prose prose-lg dark:prose-invert max-w-none">
+              <article className="prose prose-lg dark:prose-invert max-w-none break-words overflow-x-hidden">
                 {review.full_review.split('\n\n').map((paragraph, index) => {
                   // This is a simple Markdown-like parser for the database content
                   if (paragraph.startsWith('# ')) {
@@ -161,7 +157,7 @@ const ReviewPage = () => {
                     );
                   }
                   return (
-                    <p key={index} className="text-muted-foreground leading-relaxed mb-6">
+                    <p key={index} className="text-muted-foreground leading-relaxed mb-6 break-words">
                       {paragraph}
                     </p>
                   );

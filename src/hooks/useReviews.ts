@@ -113,6 +113,35 @@ export function useUpdateReview() {
 }
 
 /**
+ * Хук для обновления порядка рецензий
+ */
+export function useUpdateReviewsOrder() {
+    const queryClient = useQueryClient();
+
+    return useMutation({
+        mutationFn: async (updatedReviews: { id: string; position: number }[]) => {
+            // В Supabase нет массового обновления разными значениями в одном запросе без RPC
+            // Поэтому делаем массив обещаний для одиночных обновлений
+            const updates = updatedReviews.map(review =>
+                supabase
+                    .from('reviews')
+                    .update({ position: review.position })
+                    .eq('id', review.id)
+            );
+
+            const results = await Promise.all(updates);
+            const error = results.find(r => r.error)?.error;
+
+            if (error) throw error;
+            return results;
+        },
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ['reviews'] });
+        },
+    });
+}
+
+/**
  * Хук для удаления рецензии
  */
 export function useDeleteReview() {

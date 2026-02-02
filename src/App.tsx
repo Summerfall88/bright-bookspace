@@ -17,6 +17,7 @@ import { SectionsPage } from "@/pages/admin/SectionsPage";
 import { SectionEditPage } from "@/pages/admin/SectionEditPage";
 import { ReviewsAdminPage } from "@/pages/admin/ReviewsAdminPage";
 import { ReviewEditPage } from "@/pages/admin/ReviewEditPage";
+import { SettingsPage } from "@/pages/admin/SettingsPage";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +48,7 @@ const App = () => (
             <Route path="sections/:id" element={<SectionEditPage />} />
             <Route path="reviews" element={<ReviewsAdminPage />} />
             <Route path="reviews/:id" element={<ReviewEditPage />} />
+            <Route path="settings" element={<SettingsPage />} />
             {/* TODO: Add more admin routes */}
           </Route>
 
