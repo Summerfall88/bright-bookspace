@@ -56,12 +56,20 @@ INSERT INTO public.site_settings (key, value) VALUES
 ('branding', '{
   "site_name": "EvilBook",
   "logo_text": "EvilBook",
-  "copyright": "© 2026 Evilbook. Все права защищены."
+  "copyright": "© 2026 Evilbook. Все права защищены.",
+  "logo_icon_url": null
 }'),
 ('social_links', '{
   "instagram": "https://www.instagram.com/christinaevil/",
+  "instagram_icon_url": null,
   "telegram": "https://t.me/christinaevilbook",
-  "youtube": "https://www.youtube.com/@evilbook"
+  "telegram_icon_url": null,
+  "youtube": "https://www.youtube.com/@evilbook",
+  "youtube_icon_url": null,
+  "tiktok": null,
+  "tiktok_icon_url": null,
+  "vk": null,
+  "vk_icon_url": null
 }'),
 ('meta', '{
   "title": "EvilBook - Книжный блог",
